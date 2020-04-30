@@ -22,6 +22,10 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap
       .subscribe(params => {
+        /**
+         * '+' casts to Number.
+         * .get is a function that belongs to paramMap interface.
+         */
         this.product = products[+params.get('productId')]
       })
   }
